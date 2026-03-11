@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ShoppingBag, Menu } from 'lucide-react';
+import { Link, NavLink } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import { cn } from '../lib/utils';
 import { Button } from './ui/Button';
 
 export default function Navbar() {
@@ -18,10 +18,8 @@ export default function Navbar() {
 
     return (
         <nav
-            className={cn(
-                'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out px-6 py-4 flex items-center justify-between',
-                scrolled ? 'bg-beige-100/80 backdrop-blur-md shadow-sm py-3' : 'bg-transparent'
-            )}
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out px-6 py-4 flex items-center justify-between ${scrolled ? 'bg-beige-100/80 backdrop-blur-md shadow-sm py-3' : 'bg-transparent'
+                }`}
         >
             <div className="flex items-center gap-4">
                 {/* Mobile Menu Trigger (Visual only for now) */}
@@ -29,16 +27,16 @@ export default function Navbar() {
                     <Menu className="w-6 h-6" />
                 </button>
 
-                <a href="/" className="text-2xl font-serif font-bold text-charcoal tracking-tight">
+                <Link to="/" className="text-2xl font-serif font-bold text-charcoal tracking-tight">
                     Aroha<span className="text-sage-500">.</span>
-                </a>
+                </Link>
             </div>
 
             <div className="flex items-center gap-6">
                 <ul className="hidden md:flex items-center gap-8 text-sm font-medium text-charcoal/80">
-                    <li><a href="#" className="hover:text-sage-600 transition-colors">Shop</a></li>
-                    <li><a href="#" className="hover:text-sage-600 transition-colors">About</a></li>
-                    <li><a href="#" className="hover:text-sage-600 transition-colors">Journal</a></li>
+                    <li><NavLink to="/" className={({ isActive }) => isActive ? "text-sage-600 transition-colors" : "hover:text-sage-600 transition-colors"}>Home</NavLink></li>
+                    <li><NavLink to="/explore" className={({ isActive }) => isActive ? "text-sage-600 transition-colors" : "hover:text-sage-600 transition-colors"}>Explore</NavLink></li>
+                    <li><NavLink to="/about" className={({ isActive }) => isActive ? "text-sage-600 transition-colors" : "hover:text-sage-600 transition-colors"}>About</NavLink></li>
                 </ul>
 
                 <Button

@@ -1,16 +1,40 @@
-# React + Vite
+# Aroha Shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A curated essentials and authentic local Mysuru artisan product marketplace. 
+Aroha aims to bridge the vibrant cultural heritage of Mysuru and the modern home, in unity with the students at Vidyavardhaka College of Engineering (VVCE).
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Product Catalog:** Discover genuine Mysuru products including Silk Sarees, Rosewood Inlays, Channapatna Toys, and Agarbathis.
+- **Cart System:** Add items to your cart with automatic bill tallying including a prototype 18% GST calculation.
+- **Explore & Filter:** Search for specific products by name or description and filter down by categories.
+- **Modern UI:** Built using a fast, responsive, and aesthetically pleasing design leveraging Tailwind CSS.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework:** React.js powered by Vite
+- **Routing:** React Router v6
+- **Styling:** Tailwind CSS
+- **Icons:** Lucide-React
+- **State Management:** React Context API
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+3. **Build across for production:**
+   ```bash
+   npm run build
+   ```
+
+## Contact
+
+For inquiries or support, please reach out to us at [vvce25cseaiml0034@vvce.ac.in](mailto:vvce25cseaiml0034@vvce.ac.in).

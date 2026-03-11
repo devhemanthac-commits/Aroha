@@ -1,5 +1,4 @@
 import React from 'react';
-import { cn } from '../../lib/utils';
 
 export const Button = React.forwardRef(({ className, variant = 'primary', size = 'default', children, ...props }, ref) => {
     const variants = {
@@ -17,15 +16,12 @@ export const Button = React.forwardRef(({ className, variant = 'primary', size =
         icon: 'h-10 w-10 p-2 flex items-center justify-center',
     };
 
+    const baseStyles = 'inline-flex items-center justify-center rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none';
+
     return (
         <button
             ref={ref}
-            className={cn(
-                'inline-flex items-center justify-center rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none',
-                variants[variant],
-                sizes[size],
-                className
-            )}
+            className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
             {...props}
         >
             {children}

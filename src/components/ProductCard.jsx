@@ -1,7 +1,6 @@
 import React from 'react';
-import { Plus } from 'lucide-react';
+import { ShoppingBag } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import { cn } from '../lib/utils';
 import { Button } from './ui/Button';
 
 export default function ProductCard({ product }) {

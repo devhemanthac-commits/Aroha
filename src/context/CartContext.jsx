@@ -43,8 +43,13 @@ export function CartProvider({ children }) {
     const cartCount = useMemo(() => items.reduce((acc, item) => acc + item.quantity, 0), [items]);
     const cartTotal = useMemo(() => items.reduce((acc, item) => acc + item.price * item.quantity, 0), [items]);
 
+    // Prototype GST Calculation (18%)
+    const gstRate = 0.18;
+    const gstAmount = cartTotal * gstRate;
+    const finalTotal = cartTotal + gstAmount;
+
     return (
-        <CartContext.Provider value={{ items, addToCart, removeFromCart, updateQuantity, isOpen, toggleCart, closeCart, cartCount, cartTotal }}>
+        <CartContext.Provider value={{ items, addToCart, removeFromCart, updateQuantity, isOpen, toggleCart, closeCart, cartCount, cartTotal, gstAmount, finalTotal }}>
             {children}
         </CartContext.Provider>
     );

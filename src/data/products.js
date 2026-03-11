@@ -30,5 +30,37 @@ export const products = [
         category: "Art",
         image: "/images/mysore-painting.jpg",
         description: "Exquisite traditional Mysore painting featuring intricate details and gold leaf work."
+    },
+    {
+        id: 5,
+        name: "Mysore Silk Saree",
+        price: 120,
+        category: "Apparel",
+        image: "/images/mysore-silk-saree.png",
+        description: "Elegant Mysore Silk Saree showcasing rich heritage and intricate golden zari work. Perfect for special occasions."
+    },
+    {
+        id: 6,
+        name: "Rosewood Inlay Artifact",
+        price: 45,
+        category: "Home Decor",
+        image: "/images/rosewood-inlay.png",
+        description: "Meticulously handcrafted Rosewood Inlay from Mysore, depicting beautiful traditional motifs with contrasting lighter woods."
+    },
+    {
+        id: 7,
+        name: "Channapatna Wooden Toys",
+        price: 18,
+        category: "Toys",
+        image: "/images/channapatna-toys.png",
+        description: "Traditional Channapatna wooden toys finished with vibrant, non-toxic lacquer colors. Safe and authentic."
+    },
+    {
+        id: 8,
+        name: "Premium Mysore Agarbathi",
+        price: 8,
+        category: "Wellness",
+        image: "/images/mysore-agarbathi.png",
+        description: "Authentic fragrant incense sticks emitting a serene wisp of smoke, conveying a spiritual and calming atmosphere."
     }
 ];

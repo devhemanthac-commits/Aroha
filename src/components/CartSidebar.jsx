@@ -2,10 +2,9 @@ import React, { useEffect, useRef } from 'react';
 import { X, Minus, Plus, Trash2, ArrowRight } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { Button } from './ui/Button';
-import { cn } from '../lib/utils';
 
 export default function CartSidebar() {
-    const { isOpen, closeCart, items, removeFromCart, updateQuantity, cartTotal } = useCart();
+    const { isOpen, closeCart, items, removeFromCart, updateQuantity, cartTotal, gstAmount, finalTotal } = useCart();
     const sidebarRef = useRef(null);
 
     // Close on outside click
@@ -33,19 +32,15 @@ export default function CartSidebar() {
         <>
             {/* Backdrop */}
             <div
-                className={cn(
-                    'fixed inset-0 z-50 bg-charcoal/40 backdrop-blur-sm transition-opacity duration-300',
-                    isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-                )}
+                className={`fixed inset-0 z-50 bg-charcoal/40 backdrop-blur-sm transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                    }`}
             />
 
             {/* Drawer */}
             <div
                 ref={sidebarRef}
-                className={cn(
-                    'fixed inset-y-0 right-0 z-50 w-full max-w-md bg-beige-100 shadow-2xl transition-transform duration-300 ease-in-out',
-                    isOpen ? 'translate-x-0' : 'translate-x-full'
-                )}
+                className={`fixed inset-y-0 right-0 z-50 w-full max-w-md bg-beige-100 shadow-2xl transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'
+                    }`}
             >
                 <div className="flex h-full flex-col">
                     {/* Header */}
@@ -118,12 +113,19 @@ export default function CartSidebar() {
                     {/* Footer */}
                     {items.length > 0 && (
                         <div className="border-t border-beige-300 p-6 space-y-4 bg-beige-100">
-                            <div className="flex justify-between items-center text-lg font-medium">
+                            <div className="flex justify-between items-center text-base">
                                 <span className="text-charcoal/80">Subtotal</span>
-                                <span className="font-serif font-bold text-2xl">${cartTotal.toFixed(2)}</span>
+                                <span className="font-medium">${cartTotal.toFixed(2)}</span>
                             </div>
-                            <p className="text-xs text-charcoal/50 text-center">Shipping and taxes calculated at checkout.</p>
-                            <Button className="w-full h-14 text-lg group bg-charcoal text-white hover:bg-sage-600">
+                            <div className="flex justify-between items-center text-sm text-charcoal/60">
+                                <span>GST (18%)</span>
+                                <span>${gstAmount.toFixed(2)}</span>
+                            </div>
+                            <div className="flex justify-between items-center text-xl font-medium pt-2 border-t border-beige-300 border-dashed">
+                                <span className="text-charcoal">Total Bill</span>
+                                <span className="font-serif font-bold">${finalTotal.toFixed(2)}</span>
+                            </div>
+                            <Button className="w-full h-14 text-lg group bg-charcoal text-white hover:bg-sage-600 mt-2">
                                 Checkout
                                 <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                             </Button>
